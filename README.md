@@ -2,7 +2,8 @@
   Created React dummy project named “Todo-react-app”.
 
 # Output:
-![Screenshot from 2022-03-04 16-19-57](https://user-images.githubusercontent.com/97098100/156752090-50d2f78d-fef0-4d56-923a-bdb7dade3910.png)
+![Screenshot from 2022-03-09 09-58-52](https://user-images.githubusercontent.com/97098100/157373332-aa96aed0-c7aa-4ed3-9480-797f8263b1ff.png)
+
 
 # 1. [Setup React](https://reactjs.org/docs/try-react.html)
 
