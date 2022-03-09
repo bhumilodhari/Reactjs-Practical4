@@ -15,7 +15,7 @@ function TodoList(props) {
     <IconContext.Provider value={{ className: isChecked ? "completed" : "checks" }}>
       <TodoListStyle>
         <TodoListItems>
-          <IsChecked style={isChecked ? { color: '#c2c2c2' } : { color: '#54575f' }}>{props.data}</IsChecked>
+          <IsChecked isChecked={isChecked}>{props.data}</IsChecked>
           <TodoCheckBox  type="checkbox" id={props.id} onClick={checkHandler}> <FaRegDotCircle /></TodoCheckBox>
         </TodoListItems>
       </TodoListStyle>
