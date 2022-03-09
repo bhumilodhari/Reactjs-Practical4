@@ -1,11 +1,7 @@
 import TodoDate from '../TodoDate/TodoDate';
 import TodoContent from '../TodoContent/TodoContent';
 import TodoAddButton from '../TodoAddButton/TodoAddButton';
-import styled from 'styled-components';
-
-const TodoStyle = styled.div`
-    position: relative;
-`;
+import TodoStyle from '../../styled/todo';
 
 const contentData = [
     { id: 1, data: "Buy new sweatshirt" },

@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+ 
+const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,3 +15,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.checks {
+color: #cbccd0;
+}
+
+.completed{
+color: #3adfa2;
+}
+`;
+ 
+export default GlobalStyle;

@@ -1,36 +1,10 @@
 import { useState } from 'react';
-import styled from 'styled-components';
-
-const TodoListStyle = styled.li`
-    list-style-type: none;
-    font-size: 0.9em;
-    color: #54575f;
-`;
-
-const TodoListItems = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-`;
-
-const IsChecked = styled.div`
-    align-items: center;
-`;
-
-const TodoCheckBox = styled.input`
-    width: 1.8em;
-    height: 1.8em;
-    background-color: white;
-    align-items: center;
-    border-radius: 50%;
-    vertical-align: middle;
-    border: 2.5px solid gray;
-    color: black;
-    appearance: none; 
-    outline: none;
-    cursor: pointer;
-;`
+import { FaRegDotCircle } from "react-icons/fa";
+import { IconContext } from 'react-icons';
+import TodoListStyle from '../../styled/TodoList/todoListStyle';
+import TodoListItems from '../../styled/TodoList/todoListItems';
+import IsChecked from '../../styled/TodoList/isChecked';
+import TodoCheckBox from '../../styled/TodoList/todoCheckBox';
 
 function TodoList(props) {
   const [isChecked, setIsChecked] = useState(false);
@@ -38,13 +12,17 @@ function TodoList(props) {
     setIsChecked(!isChecked);
   }
   return (
-    <TodoListStyle>
-      <TodoListItems>
-        <IsChecked style={isChecked ? { color: '#c2c2c2' } : { color: '#54575f' }}>{props.data}</IsChecked>
-        <TodoCheckBox style={isChecked ? { border: '2.5px solid #3adfa2' } : { backgroundColor: 'white' }} type="checkbox" id={props.id} onChange={checkHandler}></TodoCheckBox>
-      </TodoListItems>
-    </TodoListStyle>
+    <IconContext.Provider value={{ className: isChecked ? "completed" : "checks" }}>
+      <TodoListStyle>
+        <TodoListItems>
+          <IsChecked style={isChecked ? { color: '#c2c2c2' } : { color: '#54575f' }}>{props.data}</IsChecked>
+          <TodoCheckBox  type="checkbox" id={props.id} onClick={checkHandler}> <FaRegDotCircle /></TodoCheckBox>
+        </TodoListItems>
+      </TodoListStyle>
+    </IconContext.Provider>
   )
 }
+
+
 
 export default TodoList;
